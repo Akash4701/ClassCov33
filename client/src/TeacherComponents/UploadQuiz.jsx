@@ -64,6 +64,7 @@ const QuizUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Quiz Question"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 {['option1', 'option2', 'option3', 'option4'].map((option, index) => (
@@ -76,6 +77,7 @@ const QuizUpload = () => {
                             onChange={handleChange}
                             className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                             placeholder={`Option ${index + 1}`}
+                            style={{ color: 'black' }}
                         />
                     </div>
                 ))}
@@ -88,6 +90,7 @@ const QuizUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Answer"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <button type="submit" className="px-4 py-2 font-bold text-green bg-blue-500 rounded hover:bg-green-700">

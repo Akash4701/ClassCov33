@@ -67,7 +67,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Assignment Title"
-                        
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -79,7 +79,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Class Teacher Name"
-                        
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -90,6 +90,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Assignment Description"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -101,6 +102,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Class Name"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -112,6 +114,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Subject"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -122,6 +125,7 @@ const AssignmentUpload = () => {
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
                         placeholder="Assignment Guidelines"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <div>
@@ -132,6 +136,7 @@ const AssignmentUpload = () => {
                         value={assignment.deadline}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm"
+                        style={{ color: 'black' }}
                     />
                 </div>
                 <button type="submit" className="px-4 py-2 font-bold text-green bg-blue-500 rounded hover:bg-green-700">
