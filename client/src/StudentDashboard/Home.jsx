@@ -20,6 +20,9 @@ function Home() {
   const [assignments, setAssignments] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [user,setUser] = useState("")
+  const [notes , setNotes] = useState([]);
+  const [noNotes,setNoNotes] = useState(0);
+
   const data = [
     { name: "Attendance", Performance: 50 },
     { name: "Quiz", Performance: 30 },
@@ -52,6 +55,17 @@ function Home() {
    }
   
 }, []);
+useEffect(() => {
+  const notesString = localStorage.getItem("notes");
+  if (notesString) {
+    const notesArray = JSON.parse(notesString);
+    setNotes(notesArray);
+    const totalProps = notesArray.reduce((acc, obj) => acc + Object.keys(obj).length, 0);
+    console.log(totalProps);
+    setNoNotes(totalProps/3);
+  }
+}, []);
+
 
 
   const divStyle = {
@@ -146,7 +160,7 @@ function Home() {
             style={{ ...cardStyle, background: "#2c2c2c", color: "" }}
           >
             <FaNoteSticky className="text-4xl ml-auto text-green-500" />
-            <h2 className="text-3xl font-bold">36</h2>
+            <h2 className="text-3xl font-bold">{noNotes}</h2>
             <h2>Public/Private Notes</h2>
           </div>
         </div>

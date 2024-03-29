@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Teacher from './Teacher'
@@ -13,6 +12,8 @@ import Vocab from './components/VocabChallenge/Vocab';
 import QuestionUpload from './TeacherComponents/UploadQuiz';
 import QR from './TeacherComponents/QRCodeGenerator';
 import Todo from './components/Todo/Todo';
+import StartQuiz from './components/StartQuiz';
+import QuizPage from './components/QuizPage';
 
 
 
@@ -31,7 +32,8 @@ function App() {
        
         <Route path="/Stud" element={<Student/>} />
         <Route path="/notes" element={<NoteSection/>}/>
-        <Route path="/quiz" element={<QuizSection/>}/>
+        <Route path="/Startquiz" element={<StartQuiz/>}/>
+        <Route path='/quiz' element={<QuizPage/>}/>
        
         <Route path='/assignment' element={<Assignments/>}/>
          <Route path='/todo' element={<Todo/>}/>

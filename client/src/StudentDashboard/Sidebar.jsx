@@ -60,7 +60,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="/quiz "  className='flex'>
+          <a href="/Startquiz "  className='flex'>
             <BsPeopleFill className='icon' />
             Attempt Quiz
           </a>
