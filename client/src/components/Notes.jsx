@@ -110,7 +110,7 @@ function NoteSection() {
               {notes.map((note) => (
                 <li
                   key={note.id}
-                  className={`mb-4 ${
+                  className={`mb-4 p-4 ${
                     note.isImportant
                       ? "border-2 border-yellow-500 rounded"
                       : "border border-gray-500 rounded"

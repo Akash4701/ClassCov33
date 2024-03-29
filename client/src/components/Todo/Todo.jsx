@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-
 import Container from "react-bootstrap/Container";
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 
 function Todo() {
   const [tasks, setTasks] = useState([]);
@@ -67,11 +64,12 @@ function Todo() {
   const upcomingTasks = tasks.filter((t) => !t.done);
 
   return (
-    <Container className="App" style={{ fontFamily: 'Arial, Helvetica, sans-serif', backgroundColor: '#f0f0f0', margin: 0, padding: 0, color: '#333' }}>
-      <header className="h" style={{ backgroundColor: 'white', color: 'green', textAlign: 'center', padding: '1rem 0', boxShadow: '0 4px 18px lightgray' }}>
-        <h1>Task Scheduler</h1>
-      </header>
-      <main className="m" style={{ maxWidth: '800px', margin: '20px auto', padding: '20px', backgroundColor: '#fff', boxShadow: '0 4px 18px lightgrey' }}>
+    <Container className="App" style={{ backgroundColor: '#0605333e', color: '#fff' }}>
+      <header className="h" style={{ color: 'aqua', textAlign: 'center', fontSize: '3rem'}}>
+  <h1>Task Scheduler</h1>
+</header>
+
+      <main className="m" style={{ maxWidth: '800px', margin: '20px auto', padding: '20px', backgroundColor: '#2c2c2c', boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 14px, rgba(0, 0, 0, 0.3) 0px 13px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset' }}>
         <div className="task-form" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '20px' }}>
           <input
             type="text"
@@ -79,13 +77,13 @@ function Todo() {
             placeholder="Please Enter Task"
             value={task}
             onChange={handleTaskChange}
-            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px' }}
+            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px', color: '#333' }}
           />
           <select
             id="priority"
             value={priority}
             onChange={handlePriorityChange}
-            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px' }}
+            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px', color: '#333' }}
           >
             <option value="top">Top Priority</option>
             <option value="middle">Middle Priority</option>
@@ -96,30 +94,30 @@ function Todo() {
             id="deadline"
             value={deadline}
             onChange={handleDeadlineChange}
-            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px' }}
+            style={{ padding: '10px', border: '1px solid #ccc', fontSize: '16px', flex: 1, borderRadius: '10px', color: '#333' }}
           />
           <button id="add-task" onClick={addTask} style={{ backgroundColor: 'green', color: 'white', border: 'none', cursor: 'pointer' }}>
             Add Task
           </button>
         </div>
-        <h2 className="heading" style={{ paddingBottom: '10px' }}>Upcoming Tasks</h2>
-        <div className="task-list" id="task-list" style={{ border: '1px solid #ddd', padding: '10px' }}>
-          <table style={{ width: '100%', marginTop: '20px', backgroundColor: '#fff', border: '1px solid #ddd' }}>
+        <h2 className="heading" style={{ paddingBottom: '10px', color: '#fff' }}>Upcoming Tasks</h2>
+        <div className="task-list" id="task-list">
+          <table style={{ width: '100%', marginTop: '20px', backgroundColor: '#fff', borderRadius: '10px' }}>
             <thead>
-              <tr>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Task Name</th>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Priority</th>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Deadline</th>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Action</th>
+              <tr >
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Task Name</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Priority</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Deadline</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Action</th>
               </tr>
             </thead>
             <tbody>
               {upcomingTasks.map((t) => (
                 <tr key={t.id}>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{t.task}</td>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{t.priority}</td>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{t.deadline}</td>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>
+                  <td style={{ padding: '19px', color: '#333' }}>{t.task}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>{t.priority}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>{t.deadline}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>
                     {!t.done && (
                       <button
                         className="mark-done"
@@ -136,21 +134,21 @@ function Todo() {
           </table>
         </div>
         <div className="completed-task-list" style={{ marginTop: '20px' }}>
-          <h2 className="cheading" style={{ color: 'rgb(54, 54, 54)' }}>Completed Tasks</h2>
-          <table style={{ width: '100%', marginTop: '20px', backgroundColor: '#fff', border: '1px solid #ddd' }}>
+          <h2 className="cheading">Completed Tasks</h2>
+          <table style={{ width: '100%', marginTop: '20px', backgroundColor: '#fff', borderRadius: '10px' }}>
             <thead>
               <tr>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Task Name</th>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Priority</th>
-                <th style={{ padding: '19px', borderBottom: '1px solid #ddd', backgroundColor: '#eee', color: 'black', borderRadius: '10px' }}>Deadline</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Task Name</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Priority</th>
+                <th style={{ padding: '19px', backgroundColor: '#3d6063', color: 'white', borderRadius: '10px' }}>Deadline</th>
               </tr>
             </thead>
             <tbody>
               {completedTasks.map((ct) => (
                 <tr key={ct.id}>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{ct.task}</td>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{ct.priority}</td>
-                  <td style={{ padding: '19px', borderBottom: '1px solid #ddd' }}>{ct.deadline}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>{ct.task}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>{ct.priority}</td>
+                  <td style={{ padding: '19px', color: '#333' }}>{ct.deadline}</td>
                 </tr>
               ))}
             </tbody>
@@ -162,8 +160,3 @@ function Todo() {
 }
 
 export default Todo;
-
-// Future plans with this app:
-// 1. Color code task priorities
-// 2. CSS polishing up
-// 3. Make completed tasks disappear
